@@ -25,12 +25,7 @@ namespace TestCanvas
             newLine.Stroke= new SolidColorBrush((Color)ColorConverter.ConvertFromString(txColor.Text));
             canvas.Children.Add(newLine);
             lbLines.Items.Add($"X1:{newLine.X1} Y1:{newLine.Y1} X2:{newLine.X2} Y2:{newLine.Y2} Color:{txColor.Text}");
-            //Rectangle rect = new Rectangle();
-            //rect.Width = 50;
-            //rect.Height = 20;
-            //rect.Fill = new SolidColorBrush(System.Windows.Media.Colors.Green);
-            //canvas.Children.Add(rect);
-            //canvas.RenderTransform
+           
         }
     }
 }

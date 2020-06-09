@@ -17,26 +17,36 @@
     </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition />
-            <ColumnDefinition />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition />
-            <RowDefinition />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <Border Width="200" Height="200" HorizontalAlignment="Left"
+        <Border  HorizontalAlignment="Left"
                 VerticalAlignment="Top"
-                BorderBrush="Crimson" BorderThickness="5"
+                BorderBrush="Crimson" BorderThickness="1"
                 DockPanel.Dock="Top">
-            <Viewbox Width="200" Height="200">
-                <Canvas x:Name="canvas" Width="200" Height="200">
-                    <Canvas.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform ScaleX="1" ScaleY="-1" />
-                            <TranslateTransform x:Name="canvasTranslate" X="100" Y="100" />
-                        </TransformGroup>
-                    </Canvas.RenderTransform>
-                </Canvas>
+            <Viewbox>
+                <Border BorderBrush="Green" BorderThickness="1">
+                    <Canvas x:Name="canvas" Width="70" Height="50" Margin="5">
+                        <Canvas.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleX="1" ScaleY="-1" />
+                                <TranslateTransform x:Name="canvasTranslate" X="50" Y="30" />
+                            </TransformGroup>
+                        </Canvas.RenderTransform>
+                        <Line Stroke="Gray" X1="-1000" X2="1000"
+                              Y1="0" Y2="0" />
+                        <Line Stroke="Gray" X1="0" X2="0"
+                              Y1="-1000" Y2="1000" />
+
+                        <!--<Rectangle Canvas.Left="0" Canvas.Top="0" Width="100"
+                                   Height="50"
+                                   Fill="Crimson" Opacity="0.2" />-->
+                    </Canvas>
+                </Border>
             </Viewbox>
         </Border>
         <ListBox x:Name="lbLines" Grid.Column="1" />
@@ -48,7 +58,7 @@
                 <TextBox Name="tbY1">0</TextBox>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <TextBlock Text="X1" />
+                <TextBlock Text="X2" />
                 <TextBox Name="tbX2">0</TextBox>
                 <TextBlock Text="Y2" />
                 <TextBox Name="tbY2">0</TextBox>
