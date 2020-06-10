@@ -15,16 +15,18 @@
             <Setter Property="Width" Value="50" />
         </Style>
     </Window.Resources>
-    <Grid>
+    <Grid ShowGridLines="True">
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <Border  HorizontalAlignment="Left"
+        <!--<Border  HorizontalAlignment="Left"
                 VerticalAlignment="Top"
                 BorderBrush="Crimson" BorderThickness="1"
                 DockPanel.Dock="Top">
@@ -42,15 +44,20 @@
                         <Line Stroke="Gray" X1="0" X2="0"
                               Y1="-1000" Y2="1000" />
 
-                        <!--<Rectangle Canvas.Left="0" Canvas.Top="0" Width="100"
+        -->
+        <!--<Rectangle Canvas.Left="0" Canvas.Top="0" Width="100"
                                    Height="50"
                                    Fill="Crimson" Opacity="0.2" />-->
+        <!--
                     </Canvas>
                 </Border>
             </Viewbox>
-        </Border>
-        <ListBox x:Name="lbLines" Grid.Column="1" />
-        <StackPanel Grid.Row="1" Grid.Column="0">
+        </Border>-->
+        <ListBox x:Name="lbLines" Grid.Column="2" />
+        <local:CanvasControl x:Name="CanvasControl" Grid.Row="1" Grid.Column="1"
+                             MaxX="90" MaxY="40" MinX="-10"
+                             MinY="-10" />
+        <StackPanel Grid.Row="2" Grid.Column="1">
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="X1" />
                 <TextBox Name="tbX1">0</TextBox>
@@ -78,7 +85,7 @@
                 </StackPanel>
             </StackPanel>
         </StackPanel>
-        <Button x:Name="Test" Grid.Row="1" Grid.Column="1"
+        <Button x:Name="Test" Grid.Row="2" Grid.Column="2"
                 Background="Brown" Click="Test_Click" Content="Test"
                 DockPanel.Dock="Bottom" />
     </Grid>

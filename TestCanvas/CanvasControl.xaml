@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="TestCanvas.CanvasControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:TestCanvas"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             d:DesignHeight="450" d:DesignWidth="800"
+             Loaded="UserControl_Loaded"
+             mc:Ignorable="d">
+    <!--<Border BorderBrush="Green" BorderThickness="1">-->
+    <Grid>
+        <Viewbox>
+            <Canvas x:Name="Canvas" Width="200" Height="200">
+                <Canvas.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform x:Name="scaleTransform" />
+                        <TranslateTransform x:Name="translateTransform" />
+                    </TransformGroup>
+                </Canvas.RenderTransform>
+            </Canvas>
+        </Viewbox>
+    </Grid>
+    <!--</Border>-->
+</UserControl>
